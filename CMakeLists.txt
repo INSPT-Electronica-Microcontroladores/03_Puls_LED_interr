@@ -23,35 +23,35 @@ if (EXISTS ${picoVscode})
     include(${picoVscode})
 endif()
 # ====================================================================================
-set(PICO_BOARD pico2 CACHE STRING "Board type")
+set(PICO_BOARD pico2_w CACHE STRING "Board type")
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(06_puls_led_int_2 C CXX ASM)
+project(03_Puls_LED_interr C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(06_puls_led_int_2 main.c )
+add_executable(03_Puls_LED_interr main.c )
 
-pico_set_program_name(06_puls_led_int_2 "06_puls_led_int_2")
-pico_set_program_version(06_puls_led_int_2 "0.1")
+pico_set_program_name(03_Puls_LED_interr "03_Puls_LED_interr")
+pico_set_program_version(03_Puls_LED_interr "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(06_puls_led_int_2 1)
-pico_enable_stdio_usb(06_puls_led_int_2 0)
+pico_enable_stdio_uart(03_Puls_LED_interr 1)
+pico_enable_stdio_usb(03_Puls_LED_interr 0)
 
 # Add the standard library to the build
-target_link_libraries(06_puls_led_int_2
+target_link_libraries(03_Puls_LED_interr
         pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(06_puls_led_int_2 PRIVATE
+target_include_directories(03_Puls_LED_interr PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
-pico_add_extra_outputs(06_puls_led_int_2)
+pico_add_extra_outputs(03_Puls_LED_interr)
 
